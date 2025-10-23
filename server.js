@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // MySQL connection (Aiven credentials stored in .env)
-const db = mysql.createConnection({
+const db = mysql2.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
