@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+
+  <style>
+    body { font-family: sans-serif; line-height: 1.6; background: #f9f9f9; }
+    .contact { padding: 4rem 2rem; text-align: center; }
+    .contact h2 { margin-bottom: 2rem; font-size: 2rem; color: #333; }
+    form { display: flex; flex-direction: column; max-width: 500px; margin: auto; gap: 1rem; }
+    input, textarea { padding: 0.8rem; border-radius: 5px; border: 1px solid #ccc; width: 100%; font-size: 1rem; }
+    button { background: #ff6600; color: #fff; padding: 0.8rem; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: background 0.3s; }
+    button:hover { background: #e55a00; }
+    #formMessage { margin-top: 1rem; font-weight: bold; }
+    @media(max-width:768px){ form { width: 90%; } }
+  </style>
+
+</head>
+<body>
+  <section class="contact">
+    <h2>Get In Touch</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="tel" id="phone" placeholder="Your mobile number" required>
+      <input type="text" id="business_name" placeholder="Business Name">
+      <input type="url" id="business_website" placeholder="Business Website URL (optional)">
+      <input type="text" id="country" placeholder="Country" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="formMessage"></p>  
+  </section>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMessage');
+
+    function isValidEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+    function isValidPhone(p){ return /^\+\d{1,4}\s?\d{7,15}$/.test(p); }
+    function isValidURL(url){ return /^(https?:\/\/)?([\w\d\-]+\.)+[\w]{2,}(\/.*)?$/.test(url); }
+
+    form.addEventListener('submit', async (ev)=>{
+      ev.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const business_name = document.getElementById('business_name').value.trim();
+      const business_website = document.getElementById('business_website').value.trim();
+      const country = document.getElementById('country').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if(!isValidEmail(email)){ msg.style.color='red'; msg.textContent='Enter a valid email.'; return; }
+      if(!isValidPhone(phone)){ msg.style.color='red'; msg.textContent='Enter a valid phone with country code.'; return; }
+      if(business_website && !isValidURL(business_website)){ msg.style.color='red'; msg.textContent='Enter a valid website URL.'; return; }
+
+      try {
+        const res = await fetch('/submit', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({name,email,phone,business_name,business_website,country,message})
+        });
+
+        if(res.ok){
+          msg.style.color='green';
+          msg.textContent='Thank you! Your message has been submitted.';
+          form.reset();
+        } else {
+          msg.style.color='red';
+          msg.textContent='Server error. Try later.';
+        }
+      } catch(err){
+        msg.style.color='red';
+        msg.textContent='Network error. Try later.';
+      }
+    });
+  </script>
+</body>
+</html>

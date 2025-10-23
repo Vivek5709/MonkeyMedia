@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | MonkeyMedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0e0e0e;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #111;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: #ffcc00;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ffcc00;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+    }
+
+    .privacy-container {
+      max-width: 900px;
+      margin: 80px auto;
+      background-color: #111;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      color: #f77f00;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    h2 {
+      color: #f77f00;
+      margin-top: 30px;
+      font-size: 1.3em;
+    }
+
+    p, li {
+      color: #ddd;
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+
+    strong {
+      color: #ffcc00;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #ff6b6b;
+      text-decoration: none;
+    }
+
+    /* Media Queries */
+    @media (max-width: 900px) {
+      .privacy-container {
+        margin: 60px 20px;
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 15px 20px;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #111;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        gap: 15px;
+        padding: 10px 20px;
+        border-top: 1px solid #333;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .privacy-container {
+        margin: 50px 15px;
+        padding: 25px 15px;
+      }
+
+      h1 {
+        font-size: 1.7em;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      p, li {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+     <div class="logo"><img src="images/mm-logo.png" alt="Monkey media logo" width="50px" height="30px"></div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+          <a href="https://technical4509.blogspot.com/?m=1">Blogs</a>
+    </nav>
+  </header>
+
+  <div class="privacy-container">
+    <h1>Privacy Policy</h1>
+    <p><strong>Last Updated:</strong> October 2025</p>
+
+    <p>At <strong>MonkeyMedia</strong>, your privacy is our top priority. This Privacy Policy explains how we collect, use, and protect your personal information when you interact with our website and services. By using our site, you agree to the practices described below.</p>
+
+    <h2>1. Who We Are</h2>
+    <p><strong>MonkeyMedia</strong> is a digital-only platform providing creative, informational, and digital services. We <strong>do not have a physical office</strong>, and all communication is handled online through our official channels.</p>
+
+    <h2>2. Information We Collect</h2>
+    <p>We collect minimal information necessary to provide and improve our services. This may include:</p>
+    <ul>
+      <li><strong>Personal Information:</strong> Name, email, or contact details submitted through forms or messages.</li>
+      <li><strong>Usage Data:</strong> Browser type, device info, and visited pages to improve performance.</li>
+      <li><strong>Cookies:</strong> Small files enhancing your experience (can be disabled in browser settings).</li>
+    </ul>
+
+    <h2>3. How We Use Your Information</h2>
+    <p>Your data is used <strong>only for legitimate purposes</strong> such as:</p>
+    <ul>
+      <li>Responding to your inquiries or service requests.</li>
+      <li>Improving website functionality and user experience.</li>
+      <li>Sending updates related to MonkeyMedia services.</li>
+    </ul>
+    <p>We <strong>never sell, rent, or trade</strong> your data with anyone.</p>
+
+    <h2>4. Data Security</h2>
+    <p>We protect your data using modern digital safeguards to prevent <strong>unauthorized access or misuse</strong>. However, as all systems operate online, MonkeyMedia cannot guarantee absolute protection against every cyber threat, though we actively maintain secure systems.</p>
+
+    <h2>5. Sharing of Information</h2>
+    <p>Your information may be shared <strong>only when necessary</strong>, such as:</p>
+    <ul>
+      <li>When legally required by authorities.</li>
+      <li>With trusted third-party services (hosting, analytics) under confidentiality agreements.</li>
+    </ul>
+
+    <h2>6. Your Rights</h2>
+    <p>You have full control over your personal data. You can:</p>
+    <ul>
+      <li>Request to view or delete your stored information.</li>
+      <li>Opt-out of non-essential communications anytime.</li>
+    </ul>
+    <p>To exercise these rights, contact us through our <strong>Contact page</strong>.</p>
+
+    <h2>7. Links to Other Sites</h2>
+    <p>Our website may include links to external sites. MonkeyMedia is <strong>not responsible</strong> for their privacy practices or content. Please review their policies before sharing any information.</p>
+
+    <h2>8. Policy Updates</h2>
+    <p>We may occasionally update this Privacy Policy to reflect changes in law or operations. Updates will be posted here with the new <strong>“Last Updated”</strong> date.</p>
+
+    <h2>9. Contact Us</h2>
+    <p>If you have questions or concerns about this policy, contact us through our <strong>official Contact page</strong> or other communication channels listed on our website.</p>
+  </div>
+
+  <footer>
+    <p>© 2025 MonkeyMedia. All Rights Reserved.</p>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="privacy_policy.html">Privacy Policy</a>
+    
+    <section>
+      <a href="https://x.com/_V__K__05?t=rTLdKbbgd67W_fXpqfMS3Q&s=09" target="_blank" style=" margin-right:10px; text-decoration:none;"><img src="images/x.png" alt="x"  width="20px" height="20px"></a>
+      <a href="https://www.instagram.com/_vienigma?igsh=MW9pZXBkdXZiM3hqMA==" target="_blank" style=" margin-right:10px; text-decoration:none;"><img src="images/instagram (2).png" alt="instagram" width="20px" height="20px"></a>
+      <a href="https://www.linkedin.com/in/vivek-londhe-097b2535a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style=" text-decoration:none;"><img src="images/linkdin.png" alt="linkdin" width="20px" height="20px"></a>
+    </section><!-- Social Media Links -->
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

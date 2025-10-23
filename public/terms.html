@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions | MonkeyMedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0e0e0e;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #111;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: #ffcc00;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ffcc00;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+    }
+
+    .terms-container {
+      max-width: 900px;
+      margin: 80px auto;
+      background-color: #111;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      color: #f77f00;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    h2 {
+      color: #f77f00;
+      margin-top: 30px;
+      font-size: 1.3em;
+    }
+
+    p {
+      color: #ddd;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    strong {
+      color: #ffcc00;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 15px 0;
+      margin-top: 50px;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #ff6b6b;
+ 
+      text-decoration: none;
+    }
+
+    /* Media Queries */
+    @media (max-width: 900px) {
+      .terms-container {
+        margin: 60px 20px;
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 15px 20px;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #111;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        gap: 15px;
+        padding: 10px 20px;
+        border-top: 1px solid #333;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .terms-container {
+        margin: 50px 15px;
+        padding: 25px 15px;
+      }
+
+      h1 {
+        font-size: 1.7em;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+     <div class="logo"><img src="images/mm-logo.png" alt="Monkey media logo" width="50px" height="30px"></div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+          <a href="https://technical4509.blogspot.com/?m=1">Blogs</a>
+    </nav>
+  </header>
+
+  <div class="terms-container">
+    <h1>Terms and Conditions</h1>
+    <p><strong>Last Updated:</strong> October 2025</p>
+
+    <p>Welcome to <strong>MonkeyMedia</strong>. By accessing or using our website, you agree to comply with the following <strong>Terms and Conditions</strong>. Please read them carefully before using our services.</p>
+
+    <h2>1. General Information</h2>
+    <p>MonkeyMedia is an <strong>independent online platform</strong> created for creative, informational, and service purposes. We <strong>do not operate from a physical office</strong>, and all our activities are conducted <strong>digitally</strong>. Your access to our website implies your acceptance of these terms.</p>
+
+    <h2>2. Use of Our Website</h2>
+    <p>You agree to use our website only for <strong>lawful and genuine purposes</strong>. You must not misuse or attempt to hack the website, copy or redistribute our content without permission, or use MonkeyMedia for any <strong>unauthorized advertising or promotion</strong>. We reserve the right to restrict or terminate access to anyone violating these rules.</p>
+
+    <h2>3. Intellectual Property</h2>
+    <p>All <strong>logos, designs, graphics, and written content</strong> on this website are owned by MonkeyMedia (unless stated otherwise). You may not use any of our materials for commercial purposes without <strong>written consent</strong>.</p>
+
+    <h2>4. Service Disclaimer</h2>
+    <p>MonkeyMedia offers information and digital services “<strong>as available</strong>.” While we aim for accuracy, we <strong>do not guarantee</strong> that the content will always be complete, error-free, or available at all times. We shall not be liable for any <strong>losses, damages, or delays</strong> arising from website use or third-party links.</p>
+
+    <h2>5. Privacy and Data</h2>
+    <p>We respect your privacy. Personal details shared through our contact forms or messages are used <strong>only to communicate or provide requested services</strong>. We <strong>never sell or share</strong> your information with unauthorized parties. For more details, refer to our <strong>Privacy Policy</strong>.</p>
+
+    <h2>6. External Links</h2>
+    <p>Our website may contain links to third-party sites. MonkeyMedia is <strong>not responsible</strong> for their content or practices. Visiting them is at your own risk.</p>
+
+    <h2>7. Changes to Terms</h2>
+    <p>We may update these Terms occasionally to reflect changes in our services or legal requirements. Updated terms will be posted here with a <strong>revised date</strong>.</p>
+
+    <h2>8. Contact Us</h2>
+    <p>For any questions or clarifications, reach us via our <strong>Contact page</strong> or through our official communication channels listed on the website.</p>
+  </div>
+
+  <footer>
+    <p>© 2025 MonkeyMedia. All Rights Reserved.</p>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="privacy_policy.html">Privacy Policy</a>
+
+     <section >
+       <a href="https://x.com/_V__K__05?t=rTLdKbbgd67W_fXpqfMS3Q&s=09" target="_blank" style=" margin-right:10px; text-decoration:none; width:10px;height:10px;"><img src="images/x.png" alt="x"  width="20px" height="20px"></a>
+       <a href="https://www.instagram.com/_vienigma?igsh=MW9pZXBkdXZiM3hqMA==" target="_blank" style=" margin-right:10px; text-decoration:none; width:10px;height:10px;"><img src="images/instagram (2).png" alt="instagram" width="20px" height="20px"></a>
+       <a href="https://www.linkedin.com/in/vivek-londhe-097b2535a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style=" text-decoration:none; width:10px;height:10px;"><img src="images/linkdin.png" alt="linkdin" width="20px" height="20px"></a>
+      </section><!-- Social Media Links -->
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

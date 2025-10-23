@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | MonkeyMedia</title>
+ <style>
+
+/* Header */
+/* --- Reset & Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0e0e0e; /* match your theme */
+  color: white;
+}
+
+/* --- Header --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* --- Logo --- */
+.logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #ffcc00;
+  letter-spacing: 1px;
+}
+
+/* --- Navigation Links --- */
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffcc00;
+}
+
+/* --- Hamburger Icon --- */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    text-align: start;
+    padding: 20px 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+  a{
+    margin-left: 20px;
+  }
+}
+
+
+/* About Section */
+.about-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-section h2 {
+  color: #f77f00;
+  font-size: 2em;
+}
+
+.about-section .intro {
+  max-width: 700px;
+  margin: 10px auto 50px;
+  color: #ffffff;
+}
+
+.about-section span {
+  color: #f77f00;
+  font-weight: 600;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+
+.about-text {
+  flex: 1 1 400px;
+}
+
+.about-text h3 {
+  color: #f77f00;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: rgb(255, 255, 255);
+  padding: 15px 0;
+  margin-top: 50px;
+}
+/* FAQ Section */
+.faq-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #111;
+}
+
+.faq-section h2 {
+  color: #f77f00;
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #f77f00;
+  font-size: 1.1em;
+  padding: 15px 0;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.faq-question:hover {
+  color: #ffcc00;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  color: #fff;
+  line-height: 1.6;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 0;
+}
+
+.faq-answer.open {
+  max-height: 500px;
+  padding: 10px 0;
+}
+
+/* Arrow indicator */
+.faq-question::after {
+  content: "▼";
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer.open + .faq-question::after {
+  transform: rotate(180deg);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 40px 15px;
+  }
+
+  .faq-section h2 {
+    font-size: 1.6em;
+    margin-bottom: 30px;
+  }
+
+  .faq-question {
+    font-size: 1em;
+    padding: 12px 0;
+  }
+
+  .faq-answer {
+    font-size: 0.95em;
+  }
+}
+
+  </style>
+</head>
+<body>
+<header>
+ <div class="logo"><img src="images/mm-logo.png" alt="Monkey media logo" width="50px" height="30px"></div>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <nav id="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+        <a href="https://technical4509.blogspot.com/?m=1">Blogs</a>
+  </nav>
+</header>
+
+  <section class="about-section">
+    <h2>About Us</h2>
+    <p class="intro">
+      At <span>MonkeyMedia</span>, we turn ideas into impactful digital experiences.  
+      We believe in creativity, strategy, and innovation — helping brands stand out in the digital world.
+    </p>
+
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Who We Are</h3>
+        <p>
+          MonkeyMedia is a young and passionate digital agency focused on design, branding, and web solutions.  
+          Our mission is to empower startups and businesses by providing powerful marketing and media strategies that bring measurable results.
+        </p>
+
+        <h3>What We Do</h3>
+        <p>
+          From website development to brand management, we handle every step of your digital growth.  
+          We ensure your brand connects with the audience through meaningful visuals, engaging stories, and modern web presence.
+        </p>
+      </div>
+
+      <div class="about-img">
+        <img src="images/about.png" alt="Our Team" />
+      </div>
+    </div>
+  </section>
+
+    <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <button class="faq-question">What services does MonkeyMedia provide?</button>
+        <div class="faq-answer">
+          MonkeyMedia offers a wide range of digital solutions including website development, branding, social media management, content creation, and video editing. Our goal is to help businesses enhance their online presence, engage audiences effectively, and achieve measurable results. We tailor our services to meet the unique needs of each client, ensuring a personalized approach that drives growth and strengthens brand identity in the competitive digital landscape.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How can I contact your team for collaboration or projects?</button>
+        <div class="faq-answer">
+          You can reach us via our contact page, email, or social media platforms. We respond promptly to all inquiries, whether you're interested in starting a new project, collaborating on creative ventures, or simply learning more about our services. Our team is always ready to discuss ideas, provide guidance, and offer solutions tailored to your specific goals. Building strong communication is key to achieving successful outcomes together.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do you offer paid ads and social media management packages?</button>
+        <div class="faq-answer">
+          Yes, MonkeyMedia provides comprehensive video editing and social media management packages designed to help brands create consistent and engaging online content. Our packages include content planning, creative editing, platform optimization, and analytics tracking. We work closely with clients to understand their brand voice and objectives, ensuring that every post and video aligns with the overall marketing strategy, enhancing visibility, engagement, and audience growth across digital channels.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I request a custom project or design?</button>
+        <div class="faq-answer">
+          Absolutely! MonkeyMedia welcomes custom project requests. Whether it's a unique website design, branding concept, or specialized digital campaign, we tailor our services to meet your specific requirements. Our team collaborates closely with clients to understand their vision, goals, and preferences. By combining creativity, strategy, and technical expertise, we ensure that the final outcome is not only visually appealing but also functional, impactful, and aligned with your brand’s identity.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How long does it take to complete a typical project?</button>
+        <div class="faq-answer">
+          The duration of a project depends on its complexity and scope. Typically, small-scale projects may take 1–3 weeks, while larger or custom projects can range from a few weeks to a couple of months. At MonkeyMedia, we prioritize quality and effective communication, keeping clients updated throughout the process. Timelines are discussed and agreed upon at the start, ensuring transparency and realistic expectations for both parties.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do you provide revisions or post-project support?</button>
+        <div class="faq-answer">
+          Yes, we provide revisions and post-project support to ensure client satisfaction. MonkeyMedia understands that sometimes adjustments are needed after delivery, whether it's tweaking designs, updating content, or providing guidance for implementation. Our support is designed to maintain the integrity of your project and address concerns promptly. We believe in building lasting relationships, so we’re committed to helping clients make the most of their digital assets even after the project is completed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do you offer refunds if I’m not satisfied with the service?</button>
+        <div class="faq-answer">
+          We do provide refunds, but the labor cost will be deducted from the refund amount. At MonkeyMedia, we strive for client satisfaction by delivering quality work. However, in cases where a refund is requested, we calculate the refund fairly, considering the work and time already invested. Our goal is to maintain transparency and professionalism while ensuring that both parties are treated fairly. Clear communication from the start helps avoid misunderstandings and ensures mutual satisfaction.
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 MonkeyMedia. All rights reserved.</p>
+  <p>
+    <a href="terms.html" style="color:#ff6b6b; margin-right:15px; text-decoration:none;">Terms & Conditions</a>
+    <a href="privacy_policy.html" style="color:#ff6b6b; text-decoration:none;">Privacy Policy</a>
+
+     <section style="margin-top: 15px;">
+       <a href="https://x.com/_V__K__05?t=rTLdKbbgd67W_fXpqfMS3Q&s=09" target="_blank" style=" margin-right:10px; text-decoration:none; width:10px;height:10px;"><img src="images/x.png" alt="x"  width="20px" height="20px"></a>
+       <a href="https://www.instagram.com/_vienigma?igsh=MW9pZXBkdXZiM3hqMA==" target="_blank" style=" margin-right:10px; text-decoration:none; width:10px;height:10px;"><img src="images/instagram (2).png" alt="instagram" width="20px" height="20px"></a>
+       <a href="https://www.linkedin.com/in/vivek-londhe-097b2535a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style=" text-decoration:none; width:10px;height:10px;"><img src="images/linkdin.png" alt="linkdin" width="20px" height="20px"></a>
+      </section><!-- Social Media Links -->
+  </p> 
+</footer>
+<script>
+  function toggleMenu() {
+    document.getElementById("nav").classList.toggle("active");
+  }
+
+  const faqButtons = document.querySelectorAll(".faq-question");
+faqButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const answer = btn.nextElementSibling;
+    answer.classList.toggle("open");
+  });
+});
+</script>
+
+</body>
+</html>

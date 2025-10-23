@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MonkeyMedia Services</title>
+  <style>
+/* --- Reset & Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0e0e0e;
+  color: #ffffff;
+}
+
+/* --- Header --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  width: 50px;
+  height: 30px;
+}
+
+/* --- Navigation --- */
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffcc00;
+}
+
+/* --- Hamburger --- */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+  }
+  nav.active {
+    display: flex;
+  }
+  .menu-icon {
+    display: block;
+  }
+  a {
+    margin-left: 20px;
+  }
+}
+
+/* --- Services --- */
+.services-section {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.service {
+  text-align: center;
+}
+
+.service h2 {
+  color: #ff8c42;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.service p {
+  max-width: 700px;
+  margin: 10px auto 25px;
+  color: #dcdcdc;
+}
+
+/* --- Packages --- */
+.packages {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.package-card {
+  background: #1a1a1a;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  padding: 25px 20px;
+  text-align: left;
+  width: 300px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.package-card:hover {
+  transform: translateY(-8px);
+  border-color: #ff8c42;
+  box-shadow: 0 6px 25px rgba(255, 140, 66, 0.3);
+}
+
+.package-card strong {
+  color: #ffcc00;
+  font-size: 1.1rem;
+}
+
+.package-card ul {
+  list-style-type: "✔ ";
+  margin-left: 20px;
+  color: #bdbdbd;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.old-price {
+  color: #888;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+.new-price {
+  color: #ff8c42;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 5px 0 10px;
+}
+
+/* --- Button --- */
+.package-card button {
+  background-color: #ff8c42;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: center;
+}
+
+.package-card button:hover {
+  background-color: #e67a35;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 15px 0;
+  margin-top: 50px;
+}
+
+.service p strong {
+  color: #ffcc00;
+}
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo"><img src="images/mm-logo.png" alt="Monkey media logo"></div>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <nav id="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="contact.html">Contact</a>
+        <a href="https://technical4509.blogspot.com/?m=1">Blogs</a>
+  </nav>
+</header>
+
+<section class="services-section">
+
+  <!-- Advertizing Campaigns -->
+  <div class="service">
+    <h2>Advertizing Campaigns</h2>
+    <p>Boost your brand, reach more eyes</p>
+    <div class="packages">
+      <div class="package-card">
+        <div>
+          <div class="old-price">&#36;199</div>
+          <div class="new-price">&#36;149</div>
+          <p><strong>Starter Ads</strong></p>
+          <ul>
+            <li>Only one platform</li>
+            <li>Only one campaign</li>
+            <li>Basic ad creation (images + captions)</li>
+            <li>Audience targeting</li>
+            <li>Monthly performance report</li>
+          </ul>
+        </div>
+        <button onclick="location.href='form.html'">Get Started</button>
+      </div>
+
+      <div class="package-card">
+        <div>
+          <div class="old-price">&#36;399</div>
+          <div class="new-price">&#36;349</div>
+          <p><strong>Growth Ads</strong></p>
+          <ul>
+            <li>2 platforms</li>
+            <li>2 ad campaigns</li>
+            <li>Custom ad creatives(images + videos + copy)</li>
+            <li>Audience targeting + basic A/B testing</li>
+            <li>Engagement & lead tracking</li>
+            <li>Weekly analytics report with insights</li>
+          </ul>
+        </div>
+        <button onclick="location.href='form.html'">Get Started</button>
+      </div>
+
+      <div class="package-card">
+        <div>
+          <div class="old-price">&#36;599</div>
+          <div class="new-price">&#36;549</div>
+          <p><strong>Pro Ads</strong></p>
+          <ul>
+            <li>3 to 4 platforms</li>
+            <li>3 to 4 ad campaigns</li>
+            <li>Professional ad creatives(images + videos + carousel)</li>
+            <li>Advanced targeting & remarketing</li>
+            <li>Weekly analytics & optimization report</li>
+            <li>Conversion tracking & strategy consultation</li>
+          </ul>
+        </div>
+        <button onclick="location.href='form.html'">Get Started</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Media Management -->
+  <div class="service">
+    <h2>Social Media Management</h2>
+    <p>Grow, Engage and shine online</p>
+    <div class="packages">
+      <div class="package-card">
+        <div>
+          <div class="old-price">&#36;299</div>
+          <div class="new-price">&#36;199</div>
+          <p><strong>Starter</strong></p>
+          <ul>
+            <li>Only one platform</li>
+            <li>8 simple posts/month</li>
+            <li>Basic captions & hashtags</li>
+            <li>Monthly performance summary</li>
+            <li>No ad campaigns</li>
+          </ul>
+        </div>
+        <button onclick="location.href='form.html'">Get Started</button>
+      </div>
+
+      <div class="package-card">
+        <div>
+          <div class="old-price">&#36;499</div>
+          <div class="new-price">&#36;399</div>
+          <p><strong>Growth</strong></p>
+          <ul>
+            <li>2 to 3 platforms</li>
+            <li>15 to 20 posts/month</li>
+            <li>Custom graphics & captions</li>
+            <li>Engagement management</li>
+            <li>Monthly analytics & insight report</li>
+            <li>2 paid ad campaigns (client ad budget separate)</li>
+            <li>Strategy consultation & content planning</li>
+          </ul>
+        </div>
+        <button onclick="location.href='form.html'">Get Started</button>
+      </div>
+
+      <div class="package-card">
+        <div>
+          <div class="old-price">&#36;699</div>
+          <div class="new-price">&#36;599</div>
+          <p><strong>Pro/Enterprise</strong></p>
+          <ul>
+            <li>3 to 4 platforms</li>
+            <li>25 to 30 posts/month</li>
+            <li>Professional graphics & captions</li>
+            <li>Full engagement (comments + DMs + community building)</li>
+            <li>3 to 4 paid ad campaigns (client ad budget separate)</li>
+            <li>Weekly analytics & optimization report</li>
+            <li>Strategy consultation & content planning</li>
+          </ul>
+        </div>
+        <button onclick="location.href='form.html'">Get Started</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="service">
+  <h2>Other Services</h2>
+  <p>
+    For <strong>Logo & Graphic Design</strong>, <strong>Video & Reels Editing</strong>, 
+    <strong>Copywriting</strong>, and <strong>Web Development & SEO</strong> — 
+    we don’t have fixed packages. Prices are <strong>flexible</strong> and depend on 
+    the <strong>project’s size, complexity, and scope</strong>.
+  </p>
+</div>
+
+<footer>
+  <p>© 2025 MonkeyMedia. All rights reserved.</p>
+  <p>
+    <a href="terms.html" style="color:#ff6b6b; margin-right:15px; text-decoration:none;">Terms & Conditions</a>
+    <a href="privacy_policy.html" style="color:#ff6b6b; text-decoration:none;">Privacy Policy</a>
+  </p>
+  <section style="margin-top: 15px;">
+    <a href="https://x.com/_V__K__05?t=rTLdKbbgd67W_fXpqfMS3Q&s=09" target="_blank" style="margin-right:10px;">
+      <img src="images/x.png" alt="x" width="20" height="20">
+    </a>
+    <a href="https://www.instagram.com/_vienigma?igsh=MW9pZXBkdXZiM3hqMA==" target="_blank" style="margin-right:10px;">
+      <img src="images/instagram (2).png" alt="instagram" width="20" height="20">
+    </a>
+    <a href="https://www.linkedin.com/in/vivek-londhe-097b2535a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+      <img src="images/linkdin.png" alt="linkdin" width="20" height="20">
+    </a>
+  </section>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
