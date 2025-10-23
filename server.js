@@ -23,11 +23,33 @@ const db = mysql2.createConnection({
   ssl: { rejectUnauthorized: false } // needed for Aiven’s SSL requirement
 });
 
-db.connect(err => {
-  if (err) console.error("❌ DB connection error:", err);
-  else console.log("✅ Connected to MySQL (Aiven)");
-});
+db.connect((err) => {
+    if (err) {
+        console.error('DB connection error:', err);
+    } else {
+        console.log('✅ Connected to MySQL (Aiven)');
 
+        // 2. Create table if it doesn't exist
+        const createTableQuery = `
+        CREATE TABLE IF NOT EXISTS contacts (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            email VARCHAR(255) NOT NULL,
+            phone VARCHAR(20) NOT NULL,
+            business_name VARCHAR(255) NOT NULL,
+            business_website VARCHAR(255),
+            country VARCHAR(100) NOT NULL,
+            message TEXT NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+        `;
+
+        db.query(createTableQuery, (err, result) => {
+            if (err) console.error('Table creation error:', err);
+            else console.log('✅ Table ready');
+        });
+    }
+});
 // Routes
 app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname, "public", "index.html"))
